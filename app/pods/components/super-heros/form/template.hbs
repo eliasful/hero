@@ -1,0 +1,24 @@
+<form class="form row" {{action 'save' model on='submit'}}>
+  <div class="col-sm-4">
+    <img src={{model.image}} class="img-thumbnail">
+  </div>
+  <div class="col-sm-7">
+    <div class="form-group">
+      <label>Nome</label>
+      {{input value=model.name class="form-control" placeholder="Nome"}}
+    </div>
+    <div class="form-group">
+      <label>Descrição</label>
+      {{textarea value=model.description class="form-control"}}
+    </div>
+    <div class="form-group">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        {{input type="checkbox" id="favorite" class="custom-control-input" checked=model.favorite}}
+        <label class="custom-control-label" for="favorite">Um dos seus favoritos?</label>
+      </div>
+    </div>
+    <button type="submit" name="button" class="btn btn-primary btn-block">
+      Salvar
+    </button>
+  </div>
+</form>

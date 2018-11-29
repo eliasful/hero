@@ -1,0 +1,15 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      {{#link-to 'home'}}
+        Home
+      {{/link-to}}
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Novo Herói</li>
+  </ol>
+</nav>
+
+<div class="col-sm-12 py-sm-3 pl-sm-5 bd-content">
+  <h1 class="bd-title">Cadastre seu super-herói incrível</h1>
+  {{super-heros/form model=model}}
+</div>

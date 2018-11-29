@@ -1,0 +1,30 @@
+{{#each model as |hero|}}
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-img-top card-img-backgroud" style="background-image: url({{hero.image}})">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{hero.name}}</h5>
+        <p class="card-text">{{hero.description}}</p>
+        <div class="row">
+          <div class="col-sm-8">
+            {{#link-to 'hero.edit' hero.id class="btn btn-primary"}}
+              Ver mais detalhes
+            {{/link-to}}
+          </div>
+          <div class="col-sm-4">
+            <button type="button" name="button" class="btn btn-warning" {{action 'favorite' hero}}>
+              Tornar favorito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{else}}
+  <div class="col-sm-12">
+    <div class="alert alert-warning" role="alert">
+      Nenhum super-herói encontrado
+    </div>
+  </div>
+{{/each}}
