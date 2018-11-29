@@ -8,7 +8,6 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('home');
-  this.route('new');
 
   this.route('hero', function() {
     this.route('new');

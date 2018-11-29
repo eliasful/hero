@@ -6,11 +6,36 @@
   </div>
 
   {{navbar.content class="mr-auto"}}
+  <form class="form-inline my-2 my-lg-0">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fa fa-search"></i>
+        </span>
+      </div>
+      {{input-search class="form-control mr-sm-2" heros=heros value=search}}
+    </div>
+  </form>
+
   {{#link-to 'hero.new' class="btn btn-success"}}
     Crie um novo super-herói
   {{/link-to}}
 {{/bs-navbar}}
 
 <div class="container-fluid">
-  {{outlet}}
+  {{#if search.length}}
+    <div class="col-sm-12 py-sm-3 pl-sm-5 bd-content">
+      <h1 class="bd-title">Procurando um herói?</h1>
+      <p class="bd-lead">
+        Se voce não encontrar, pode
+        {{#link-to 'hero.new'}}
+          clicar aqui
+        {{/link-to}}
+        para cadastrar seu herói favorito.
+      </p>
+      {{super-heros/list model=heros}}
+    </div>
+  {{else}}
+    {{outlet}}
+  {{/if}}
 </div>

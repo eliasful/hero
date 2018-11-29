@@ -4,9 +4,9 @@ import { set } from '@ember/object';
 export default Component.extend({
   classNames: ['row'],
   actions: {
-    favorite(hero) {
+    async favorite(hero) {
       set(hero, 'favorite', true);
-      hero.save();
+      await hero.save();
       this.refresh();
     }
   }

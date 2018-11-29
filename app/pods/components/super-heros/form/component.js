@@ -12,6 +12,18 @@ export default Component.extend({
       } catch(e) {
         alert(e);
       }
+    },
+    async destroy(model) {
+      if (!confirm('Deseja mesmo remover esse herói?')) {
+        return;
+      }
+      
+      try {
+        await model.destroyRecord();
+        this.get('router').transitionTo('home');
+      } catch(e) {
+        alert(e);
+      }
     }
   }
 });

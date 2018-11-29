@@ -1,23 +1,20 @@
 {{#each model as |hero|}}
-  <div class="col-sm-3">
-    <div class="card" style="width: 18rem;">
-      <div class="card-img-top card-img-backgroud" style="background-image: url({{hero.image}})">
+  <div class="col-sm-3 pb-4">
+    <div class="card {{if hero.favorite 'border-warning'}}" style="width: 18rem;">
+      <!-- <div class="card-img-top card-img-backgroud" style="background-image: url({{hero.image}})"> -->
+      <div class="card-img-top card-img-backgroud">
       </div>
       <div class="card-body">
         <h5 class="card-title">{{hero.name}}</h5>
         <p class="card-text">{{hero.description}}</p>
-        <div class="row">
-          <div class="col-sm-8">
-            {{#link-to 'hero.edit' hero.id class="btn btn-primary"}}
-              Ver mais detalhes
-            {{/link-to}}
-          </div>
-          <div class="col-sm-4">
-            <button type="button" name="button" class="btn btn-warning" {{action 'favorite' hero}}>
-              Tornar favorito
-            </button>
-          </div>
-        </div>
+        {{#link-to 'hero.edit' hero.id class="card-link btn btn-primary"}}
+          Ver detalhes
+        {{/link-to}}
+        {{#unless hero.favorite}}
+          <a href="#" class="card-link btn btn-warning" {{action 'favorite' hero}}>
+            Favoritar
+          </a>
+        {{/unless}}
       </div>
     </div>
   </div>

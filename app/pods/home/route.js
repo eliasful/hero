@@ -7,7 +7,9 @@ export default Route.extend({
   model() {
     return hash({
       favorites: this.get('ajax').request('heros/favorites/'),
-      heros: this.store.findAll('hero')
+      heros: this.store.query('hero', {
+        favorite: 0
+      })
     });
   },
   actions: {
@@ -17,7 +19,7 @@ export default Route.extend({
       });
     },
     refreshModel() {
-      this.send('refresh');
+      this.refresh();
     }
   }
 });
