@@ -1,0 +1,11 @@
+<form {{action 'save' model on='submit'}}>
+  <label>Nome</label>
+  {{input type="text" value=model.name}}
+  
+  <br>
+  <label>Descrição</label>
+  {{textarea value=model.description}}
+  
+  <br>
+  <button type="submit" name="button">Salvar</button>
+</form>

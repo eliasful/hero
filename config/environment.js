@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'heros',
+    podModulePrefix: 'heros/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -30,6 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_NAMESPACE = '';
   }
 
   if (environment === 'test') {
