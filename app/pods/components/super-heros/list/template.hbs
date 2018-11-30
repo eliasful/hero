@@ -1,9 +1,7 @@
 {{#each model as |hero|}}
   <div class="col-sm-3 pb-4">
     <div class="card {{if hero.favorite 'border-warning'}}" style="width: 18rem;">
-      <!-- <div class="card-img-top card-img-backgroud" style="background-image: url({{hero.image}})"> -->
-      <div class="card-img-top card-img-backgroud">
-      </div>
+      {{card-image image=hero.image}}
       <div class="card-body">
         <h5 class="card-title">{{hero.name}}</h5>
         <p class="card-text">{{hero.description}}</p>
@@ -21,7 +19,11 @@
 {{else}}
   <div class="col-sm-12">
     <div class="alert alert-warning" role="alert">
-      Nenhum super-herói encontrado
+      {{#if loading}}
+        <i class="fa fa-spinner fa-spin"></i> Buscando...
+      {{else}}
+        Nenhum super-herói encontrado
+      {{/if}}
     </div>
   </div>
 {{/each}}

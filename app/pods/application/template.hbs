@@ -13,7 +13,7 @@
           <i class="fa fa-search"></i>
         </span>
       </div>
-      {{input-search class="form-control mr-sm-2" heros=heros value=search}}
+      <input type="text" class="form-control mr-sm-2" onInput={{perform doSearch value="target.value"}} placeholder="Procurando um herói?">
     </div>
   </form>
 
@@ -33,7 +33,7 @@
         {{/link-to}}
         para cadastrar seu herói favorito.
       </p>
-      {{super-heros/list model=heros}}
+      {{super-heros/list model=heros loading=doSearch.isRunning}}
     </div>
   {{else}}
     {{outlet}}
