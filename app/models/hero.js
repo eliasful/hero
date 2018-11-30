@@ -4,9 +4,11 @@ import { computed } from '@ember/object';
 export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
-  photo: DS.attr('string'),
+  photo: DS.attr('string', {
+    defaultValue: ''
+  }),
   favorite: DS.attr('boolean', {
-    default: false
+    defaultValue: false
   }),
   image: computed('photo', function() {
     if (this.get('photo')) {

@@ -1,5 +1,6 @@
 <form class="form row" {{action 'save' model on='submit'}}>
   <div class="col-sm-4">
+    {{image-uploader url=model.image}}
     <img src={{model.image}} class="img-thumbnail">
   </div>
   <div class="col-sm-7">
