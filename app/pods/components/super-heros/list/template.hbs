@@ -21,7 +21,11 @@
 {{else}}
   <div class="col-sm-12">
     <div class="alert alert-warning" role="alert">
-      Nenhum super-herói encontrado
+      Nenhum super-herói encontrado,
+      {{#link-to 'hero.new'}}
+        clique aqui
+      {{/link-to}}
+      para criar seu herói favorito.
     </div>
   </div>
 {{/each}}
