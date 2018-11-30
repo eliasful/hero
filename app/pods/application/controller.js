@@ -5,7 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   ajax: service(),
-  heros: A(),
+  heroes: A(),
   loading: false,
   search: null,
   doSearch: task(function * (value) {
@@ -13,12 +13,12 @@ export default Controller.extend({
     yield timeout(500);
     try {
       if (!value) {
-        this.set('heros', A());
+        this.set('heroes', A());
         return;
       }
 
-      let heros = yield this.get('ajax').request(`heros/?name=${value}`);
-      this.set('heros', heros);
+      let heroes = yield this.get('ajax').request(`heroes/?name=${value}`);
+      this.set('heroes', heroes);
     } catch(e) {
       alert(e);
     }

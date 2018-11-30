@@ -2,8 +2,8 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'heros',
-    podModulePrefix: 'heros/pods',
+    modulePrefix: 'hero',
+    podModulePrefix: 'hero/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

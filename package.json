@@ -1,8 +1,8 @@
 {
-  "name": "heros",
+  "name": "hero",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for heros goes here",
+  "description": "Small description for hero goes here",
   "license": "MIT",
   "author": "",
   "directories": {

@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | super-heros/form', function(hooks) {
+module('Integration | Component | super-heroes/list', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{super-heros/form}}`);
+    await render(hbs`{{super-heroes/list}}`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      {{#super-heros/form}}
+      {{#super-heroes/list}}
         template block text
-      {{/super-heros/form}}
+      {{/super-heroes/list}}
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

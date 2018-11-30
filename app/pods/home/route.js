@@ -6,8 +6,8 @@ export default Route.extend({
   ajax: service(),
   model() {
     return hash({
-      favorites: this.get('ajax').request('heros/favorites/'),
-      heros: this.store.query('hero', {
+      favorites: this.get('ajax').request('heroes/favorites/'),
+      heroes: this.store.query('hero', {
         favorite: 0
       })
     });
