@@ -20,9 +20,11 @@
         <label class="custom-control-label" for="favorite">Um dos seus favoritos?</label>
       </div>
     </div>
-    <button type="submit" name="button" class="btn btn-danger pull-left" {{action 'destroy' model}}>
-      Remover
-    </button>
+    {{#unless model.isNew}}
+      <button type="submit" name="button" class="btn btn-danger pull-left" {{action 'destroy' model}}>
+        Remover
+      </button>
+    {{/unless}}
     <button type="submit" name="button" class="btn btn-primary pull-right">
       Salvar
     </button>
