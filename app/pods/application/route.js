@@ -9,6 +9,9 @@ export default Route.extend({
     willTransition() {
       let application = this.controllerFor('application');
       set(application, 'search', null);
+    },
+    refreshModel() {
+      this.modelFor('home').refresh();
     }
   }
 });

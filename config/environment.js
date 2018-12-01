@@ -31,7 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.API_NAMESPACE = '';
-    ENV.apiBaseUrl = 'http://localhost:8000/';
+    ENV.APP.API_HOST = 'http://localhost:8000';
   }
 
   if (environment === 'test') {
@@ -48,6 +48,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.APP.API_NAMESPACE = '';
+    ENV.APP.API_HOST = 'https://heros-api.herokuapp.com';
   }
 
   return ENV;
