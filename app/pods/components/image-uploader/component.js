@@ -3,14 +3,15 @@ import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
 
 export default Component.extend({
-  signedRequest: service(),
-  s3Upload: service(),
+  aws: service(),
   async uploadImage() {
-    const fileName = `${get(this, 'file.name')}-${Date.now()}`
-    const fileType = get(this, 'file.type')
-    const signedData = await get(this, 'signedRequest').getUrl(fileName, fileType)
-    await get(this, 's3Upload').uploadFile(get(this, 'file'), signedData)
-    set(this, 'url', signedData.url)
+    const file = get(this, 'file');
+    try {
+      let data = await get(this, 'aws').uploadImage(file);
+      set(this, 'url', data.Location);
+    } catch(e) {
+      alert(e);
+    }
   },
   actions: {
     fileLoaded(file) {
