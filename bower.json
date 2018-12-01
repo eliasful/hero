@@ -1,0 +1,6 @@
+{
+  "name": "hero",
+  "dependencies": {
+    "sweetalert2": "^6.1.0"
+  }
+}
