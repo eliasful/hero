@@ -1,7 +1,7 @@
 {{#each model as |hero|}}
   <div class="col-sm-3 pb-4">
     <div class="card {{if hero.favorite 'border-warning'}}" style="width: 18rem;">
-      {{card-image image=hero.image}}
+      {{card-image image=hero.photo}}
       <div class="card-body">
         <h5 class="card-title">{{hero.name}}</h5>
         <p class="card-text">{{hero.description}}</p>

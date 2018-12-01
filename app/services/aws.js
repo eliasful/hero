@@ -1,6 +1,4 @@
 import Service from '@ember/service';
-import environment from 'hero/config/environment';
-import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
 
 export default Service.extend({
@@ -12,6 +10,7 @@ export default Service.extend({
     const bucketRegion = 'us-east-1';
     const IdentityPoolId = 'us-east-1:91f8f337-0fce-428c-90b8-4ece857cc3f9';
     
+    /* globals AWS */
     AWS.config.update({
       region: bucketRegion,
       credentials: new AWS.CognitoIdentityCredentials({
