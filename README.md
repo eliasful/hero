@@ -29,6 +29,7 @@ cd hero
 * Execute o comando abaixo para instalar as dependências
 ~~~~
 npm install
+bower install
 ~~~~
 
 ## Executando
